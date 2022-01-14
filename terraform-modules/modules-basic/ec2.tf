@@ -13,6 +13,7 @@ module "ec2_cluster" {
   monitoring             = true
   vpc_security_group_ids = ["sg-01a16157"]   # Get Default VPC Security Group ID and replace
   subnet_id              = "subnet-bdb64df6" # Get one public subnet id from default vpc and replace
+  user_data              = file("apache-install.sh")
 
   tags = {
     Name        = "Modules-Demo"
