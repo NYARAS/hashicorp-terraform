@@ -1,11 +1,14 @@
 locals {
   subnets = [aws_subnet.blue-green-deployment.*.id]
 
-  user_data = <<EOF
-    #cloud-config
-    runcmd:
-    - docker run -d -p 80:80 nginx:latest
-  EOF
+  user_data = <<-EOF
+    #!/bin/bash
+    sudo yum update -y
+    sudo yum install httpd -y
+    sudo systemctl enable httpd
+    sudo systemctl start httpd
+    echo "<h1>Welcome to Terraform Blue/Green Deployment! AWS Infra created using Terraform</h1>" > /var/www/html/index.html
+    EOF
 }
 
 resource "aws_instance" "blue-green-deployment" {
