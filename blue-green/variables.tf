@@ -17,3 +17,9 @@ variable "vpc_id" {
   description = "The VPC ID of your AWS deployment infrastructure"
   default     = "your_vpc_id"
 }
+
+variable "instance_type" {
+  description = "EC2 Instance Type"
+  type        = string
+  default     = "t2.micro"
+}
