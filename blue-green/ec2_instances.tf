@@ -13,7 +13,7 @@ locals {
 
 resource "aws_instance" "blue-green-deployment" {
   count                  = 3
-  ami                    = ""
+  ami                    = data.aws_ami.amzlinux.id
   instance_type          = var.instance_type
   subnet_id              = element(local.subnets, count.index)
   vpc_security_group_ids = [aws_security_group.blue-green-deployment.id]
