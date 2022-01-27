@@ -8,3 +8,7 @@ variable "profile" {
   description = "AWS Credentials Profile configured on your local desktop terminal  $HOME/.aws/credentials"
   default = "personal-deployment" 
 }
+
+variable "infrastructure_version" {
+  default = "1"
+}
