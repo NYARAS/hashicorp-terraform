@@ -9,8 +9,6 @@ terraform {
     bucket = "blue-green-for-learning-here" ## Bucket names should be unique globally
     key    = "v1"
     region = "eu-west-1"
-    # For State Locking
-    dynamodb_table = "terraform-dev-state-table"
   }
 }
 
