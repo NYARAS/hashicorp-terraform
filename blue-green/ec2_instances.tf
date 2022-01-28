@@ -1,5 +1,5 @@
 locals {
-  subnets = [aws_subnet.blue-green-deployment.*.id]
+  subnets = aws_subnet.blue-green-deployment.*.id
 
   user_data = <<-EOF
     #!/bin/bash
@@ -25,4 +25,5 @@ resource "aws_instance" "blue-green-deployment" {
     Name                  = "Blue/Green Deployment ${count.index + 1} (v${var.infrastructure_version})"
     InfrastructureVersion = var.infrastructure_version
   }
+
 }
