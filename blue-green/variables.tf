@@ -27,4 +27,5 @@ variable "instance_type" {
 variable "domain_name" {
   description = "Route53 Hosted domain name"
   type = string
+  default = "yourdomain.com"
 }
