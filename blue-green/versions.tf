@@ -7,7 +7,7 @@ terraform {
 
   backend "s3" {
     bucket = "blue-green-for-learning-here" ## Bucket names should be unique globally
-    key    = "v1"
+    key    = "v2"
     region = "eu-west-1"
   }
 }
