@@ -23,3 +23,8 @@ variable "instance_type" {
   type        = string
   default     = "t2.micro"
 }
+
+variable "domain_name" {
+  description = "Route53 Hosted domain name"
+  type = string
+}

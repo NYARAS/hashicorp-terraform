@@ -8,7 +8,6 @@ resource "aws_subnet" "blue-green-deployment" {
   vpc_id                  = var.vpc_id // Reference manually created vpc id
   availability_zone       = element(local.availability_zones, count.index)
   cidr_block              = "10.0.${local.subnet_count * (var.infrastructure_version - 1) + count.index + 1}.0/24"
-  map_public_ip_on_launch = true
 
   tags = {
     Name = "${element(local.availability_zones, count.index)} (v${var.infrastructure_version})"
