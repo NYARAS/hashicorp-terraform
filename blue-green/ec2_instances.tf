@@ -7,7 +7,7 @@ locals {
     sudo yum install httpd -y
     sudo systemctl enable httpd
     sudo systemctl start httpd
-    echo "<h1>Welcome to Terraform Blue/Green Deployment! AWS Infra created using Terraform</h1>" > /var/www/html/index.html
+    echo "<h1>Welcome to Terraform Blue/Green Deployment v2! AWS Infra created using Terraform</h1>" > /var/www/html/index.html
     EOF
 }
 
