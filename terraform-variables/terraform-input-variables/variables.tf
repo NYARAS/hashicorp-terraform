@@ -10,8 +10,17 @@ variable "ec2_ami_id" {
   default     = "ami-04dd4500af104442f" # Amazon Linus 2 AMI ID
 }
 
-variable "ec2_instance_count" {
-  description = "EC2 Instance Count"
-  type        = number
-  default     = 1
+# variable "ec2_instance_count" {
+#   description = "EC2 Instance Count"
+#   type        = number
+#   default     = 1
+# }
+variable "security_groups" {
+  description = "A map of security groups to be created"
+  type = map
+  default = {
+      sg1 = "stage"
+      sg2 = "test"
+      sg3 = "dev"
+  }
 }

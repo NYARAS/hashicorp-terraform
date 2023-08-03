@@ -1,6 +1,7 @@
 # Create Security Group -- SSH Traffic
-resource "aws_security_group" "vpc-ssh" {
-  name        = "vpc-ssh"
+resource "aws_security_group" "vpc-ssh-new" {
+  for_each        = var.security_groups
+  name            = each.value
   description = "Dev VPC SSH"
   ingress {
     description = "Allow port 22"
