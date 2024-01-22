@@ -1,6 +1,6 @@
 # Hashicorp Terraform Exam Prep Code
 
-###The core Terraform workflow has three steps:
+### The core Terraform workflow has three steps:
 
   - Write - Author infrastructure as code.
 
